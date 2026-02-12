@@ -1,117 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voice Animal Matcher 🎙️</title>
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background: radial-gradient(circle at top, #0f172a, #000);
-      color: #00f2ff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
-
-    h1 {
-      color: #00eaff;
-      text-shadow: 0 0 10px #00eaff;
-      font-size: 2em;
-    }
-
-    button {
-      background: linear-gradient(90deg, #00eaff, #007bff);
-      border: none;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 50px;
-      font-size: 1.1em;
-      cursor: pointer;
-      box-shadow: 0 0 20px #00bfff;
-      transition: transform 0.2s;
-      margin-top: 20px;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-    }
-
-    #result {
-      margin-top: 30px;
-      font-size: 1.3em;
-      color: #00f2ff;
-      text-shadow: 0 0 8px #00f2ff;
-    }
-
-    #animal {
-      margin-top: 20px;
-      font-size: 1.5em;
-      color: #00ffa3;
-      text-shadow: 0 0 10px #00ffa3;
-    }
-
-    .mic {
-      font-size: 50px;
-      margin-top: 30px;
-      color: #00eaff;
-      text-shadow: 0 0 20px #00eaff;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.8; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Tool Opener</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f0f0f0; }
+        button { font-size: 28px; padding: 20px 40px; background: #e74c3c; color: white; border: none; border-radius: 10px; cursor: pointer; }
+        button:hover { background: #c0392b; }
+        h1 { color: #333; }
+    </style>
 </head>
 <body>
-  <h1>🎙 Voice Animal Matcher</h1>
-  <div class="mic">🎤</div>
-  <button id="startBtn">Start Talking</button>
+    <h1>start</h1>
+    
+    <button id="openBtn">OPEN ALL SITES NOW</button>
 
-  <div id="result">Your speech will appear here...</div>
-  <div id="animal"></div>
+    <script>
+        const sites = [
+            'https://editorrx.github.io/worth_Score/',
+            'https://studio.speechify.com/scratchpad',
+            'https://khojotech.in/smsbomber#bestsmsbomber',
+            'https://www.callbomberz.in/'
+        ];
 
-  <script>
-    const startBtn = document.getElementById("startBtn");
-    const resultDiv = document.getElementById("result");
-    const animalDiv = document.getElementById("animal");
+        function openWithDelay() {
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < sites.length) {
+                    window.open(sites[index], '_blank');
+                    index++;
+                } else {
+                    clearInterval(interval);
+                    alert("best to use.");
+                }
+            }, 600);  // 800ms delay – adjust kar sakte ho (600-1200 try karo agar issue ho)
+        }
 
-    const animals = [
-      "Lion", "Tiger", "Elephant", "Wolf", "Bear",
-      "Panda", "Fox", "Eagle", "Cheetah", "Leopard",
-      "Kangaroo", "Zebra", "Deer", "Crocodile", "Shark"
-    ];
-
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-    recognition.lang = "en-US";
-    recognition.interimResults = false;
-
-    startBtn.addEventListener("click", () => {
-      resultDiv.textContent = "Listening...";
-      animalDiv.textContent = "";
-      recognition.start();
-    });
-
-    recognition.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      resultDiv.textContent = `You said: "${transcript}"`;
-
-      // Just for fun — show a random animal
-      const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
-      animalDiv.textContent = `🦁 Random Animal: ${randomAnimal}`;
-    };
-
-    recognition.onerror = (event) => {
-      resultDiv.textContent = "Error: Please allow microphone access!";
-    };
-  </script>
+        document.getElementById('openBtn').addEventListener('click', () => {
+            if (confirm("try agsin)!")) {
+                openWithDelay();
+            }
+        });
+    </script>
 </body>
 </html>
