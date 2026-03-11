@@ -1,47 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi Tool </title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f0f0f0; }
-        button { font-size: 28px; padding: 20px 40px; background: #e74c3c; color: white; border: none; border-radius: 10px; cursor: pointer; }
-        button:hover { background: #c0392b; }
-        h1 { color: #333; }
-    </style>
+<meta charset="UTF-8">
+<title>RID – Reality Investigation Department</title>
+
+<style>
+body{
+background:#0a0a0a;
+color:#e6e6e6;
+font-family:monospace;
+margin:0;
+}
+
+header{
+background:#111;
+padding:25px;
+text-align:center;
+border-bottom:2px solid #222;
+}
+
+header h1{
+margin:0;
+font-size:32px;
+letter-spacing:2px;
+color:#00ff9c;
+}
+
+header p{
+color:#aaa;
+margin-top:6px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:30px;
+}
+
+.case{
+background:#121212;
+border:1px solid #222;
+padding:20px;
+margin-bottom:20px;
+border-radius:8px;
+transition:0.2s;
+}
+
+.case:hover{
+border-color:#00ff9c;
+transform:scale(1.01);
+}
+
+.case h2{
+margin:0;
+color:#00ff9c;
+}
+
+.status{
+display:inline-block;
+padding:4px 10px;
+border-radius:4px;
+font-size:12px;
+margin-top:5px;
+}
+
+.solved{
+background:#063;
+color:#9effc8;
+}
+
+.investigating{
+background:#633;
+color:#ffb5b5;
+}
+
+.links a{
+color:#00d4ff;
+text-decoration:none;
+margin-right:15px;
+}
+
+.links a:hover{
+text-decoration:underline;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#777;
+border-top:1px solid #222;
+margin-top:40px;
+}
+</style>
+
 </head>
+
 <body>
-    <h1>start</h1>
-    
-    <button id="openBtn">OPEN</button>
 
-    <script>
-        const sites = [
-            'https://editorrx.github.io/worth_Score/',
-            'https://studio.speechify.com/scratchpad',
-            'https://khojotech.in/smsbomber#bestsmsbomber',
-            'https://www.callbomberz.in/'
-        ];
+<header>
+<h1>RID</h1>
+<p>Reality Investigation Department</p>
+<p>Investigate • Analyze • Reveal</p>
+</header>
 
-        function openWithDelay() {
-            let index = 0;
-            const interval = setInterval(() => {
-                if (index < sites.length) {
-                    window.open(sites[index], '_blank');
-                    index++;
-                } else {
-                    clearInterval(interval);
-                    alert("best to use.");
-                }
-            }, 600);  // 800ms delay – adjust kar sakte ho (600-1200 try karo agar issue ho)
-        }
+<div class="container">
 
-        document.getElementById('openBtn').addEventListener('click', () => {
-            if (confirm("try agsin)!")) {
-                openWithDelay();
-            }
-        });
-    </script>
+<div class="case">
+<h2>Case #001 – The Phantom Cricket Shorts</h2>
+
+<p><b>Status:</b> <span class="status solved">SOLVED</span></p>
+
+<p><b>Investigators:</b> Maverix & GPT</p>
+
+<p><b>Evidence:</b> Screenshot, multiple watermarks</p>
+
+<p><b>Breakthrough:</b> Suspect channel subscribed and revealed identity.</p>
+
+<p><b>Date Closed:</b> 11 March 2026</p>
+
+<div class="links">
+<a href="TELEGRAM_IMAGE_LINK_HERE" target="_blank">Evidence Image</a>
+</div>
+</div>
+
+</div>
+
+<footer>
+RID Database • Case Archive
+</footer>
+
 </body>
 </html>
